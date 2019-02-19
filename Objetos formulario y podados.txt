@@ -1,0 +1,13 @@
+Formulario:
+	- Registro (contraseña doble y check de terms & conditions)
+	- Una brotherhood al aceptar en enroll de un member, debe añadirse
+		ese member a la hermandad
+
+Podados: 
+	- Save de Float por Brotherhood (no se debe cambiar su Brotherhood)
+	- Save de Procession por Brotherhood (no se debe cambiar su Brotherhood)
+	- Save de MarchRequest por Brotherhood (no se debe cambiar
+		su Member ni su Procession)
+	- Save de Position por Administrator (no se debe cambiar su Brotherhood
+		ni su Member)
+	
