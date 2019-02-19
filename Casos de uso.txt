@@ -1,0 +1,32 @@
+- Actor se registra como member o brotherhood
+- Actor sin autenticar puede ver la lista de brotherhoods, los members de cada una,
+	las processions que organizan y los floats que poseen.
+- Actor edita sus datos personales.
+
+- Brotherhood lista, muestra, crea, actualiza y borra floats.
+- Brotherhood lista, muestra, crea, actualiza y borra procesiones.
+- Brotherhood lista y muestra MarchRequests.
+
+- Member lista, muestra y borra MarchRequests.
+- Member abandona brotherhood, el istema guarda el momento del abandono.
+
+- Member crea un enrolment a una Brotherhood, esa Brotherhood acepta la solicitud
+	y selecciona una Position para ese Member.
+- Member crea una MarchRequest para una Procession, la Brotherhood de esa Procession
+	la acepta y le asigna un row y column para esa MarchRequest.
+	También puede rechazar la MarchRequest y le da un RejectCause.
+
+- Administrator crea cuentas de usuario para nuevos administradores.
+- Administrator lista, muestra, crea, actualiza y borra Positions.
+- Administrator muestra un dashboard con:
+	+ La media, mínimo, máximo y desviación típica del número de members
+		por Brotherhood.
+	+ Las Brotherhoods con más miembros.
+	+ Las Brotherhoods con menos miembros.
+	+ El ratio de MarchRequest por Procession, agrupados por status.
+	+ Las processions que se van a organizar en 30 días o menos (moment).
+	+ El ratio de MarchRequest por ???? (comentar entre los dos)
+	+ La lista de miembros con al menos 10% del número máximo de MarchRequest aceptadas.
+	+ Histograma de positions.
+
+[LEER REQUISITOS PARA MÁS DETALLES DE CADA CASO DE USO]
