@@ -1,0 +1,30 @@
+
+
+userAcc1 -> admin1
+userAcc2 -> admin2
+userAcc3 -> brotherhood1
+userAcc4 -> brotherhood2
+userAcc5 -> brotherhood3
+userAcc6 -> member1
+userAcc7 -> member2
+userAcc8 -> member3
+
+member1 -> brotherhood1, brotherhood2
+member2 -> brotherhood3
+member3 -> brotherhood2, brotherhood3
+
+enrolment1 -> member2, brotherhood2
+enrolment2 -> member1, brotherhood3
+enrolment3 -> member3, brotherhood1
+
+float1 -> brotherhood3
+float2 -> brotherhood3
+float3 -> brotherhood1
+float4 -> brotherhood1
+float5 -> brotherhood2
+float6 -> brotherhood2
+
+brotherhood1 -> La Hiniesta
+brotherhood2 -> La Paz
+brotherhood3 -> La Estrella
+
