@@ -13,6 +13,7 @@ import repositories.MemberRepository;
 import security.Authority;
 import security.LoginService;
 import security.UserAccount;
+import domain.Brotherhood;
 import domain.Member;
 
 @Service
@@ -50,7 +51,6 @@ public class MemberService {
 		return result;
 	}
 
-	// 9.2
 	public Member save(final Member member) {
 		Assert.notNull(member);
 		// Logged user must be a member
@@ -85,6 +85,36 @@ public class MemberService {
 		return res;
 	}
 
+	// Returns logged member from his or her userAccount
+	public Member findByUserAccount(final UserAccount userAccount) {
+		Member res;
+		Assert.notNull(userAccount);
+
+		res = this.memberRepository.findByUserAccountId(userAccount.getId());
+
+		return res;
+	}
+
+	public Collection<Member> findAll() {
+		return this.memberRepository.findAll();
+	}
+
+	public Member findOne(final int memberId) {
+		Member b;
+
+		Assert.notNull(memberId);
+		Assert.isTrue(memberId != 0);
+		b = this.memberRepository.findOne(memberId);
+
+		Assert.notNull(b);
+		return b;
+	}
+
+	//11.3
+	public Collection<Brotherhood> belongedBrotherhoods(final int memberId) {
+		return this.memberRepository.belongedBrotherhoods(memberId);
+	}
+
 	// 12.3
 
 	public ArrayList<Object> memberStatistics() {
@@ -109,30 +139,5 @@ public class MemberService {
 		Collection<Member> res;
 		res = this.memberRepository.membersWith10percentOfMarchRequestAccepted();
 		return res;
-	}
-
-	// Returns logged member from his or her userAccount
-	public Member findByUserAccount(final UserAccount userAccount) {
-		Member res;
-		Assert.notNull(userAccount);
-
-		res = this.memberRepository.findByUserAccountId(userAccount.getId());
-
-		return res;
-	}
-
-	public Collection<Member> findAll() {
-		return this.memberRepository.findAll();
-	}
-
-	public Member findOne(final int memberId) {
-		Member b;
-
-		Assert.notNull(memberId);
-		Assert.isTrue(memberId != 0);
-		b = this.memberRepository.findOne(memberId);
-
-		Assert.notNull(b);
-		return b;
 	}
 }
