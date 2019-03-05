@@ -17,10 +17,10 @@ public interface BrotherhoodRepository extends JpaRepository<Brotherhood, Intege
 
 	//12.3
 
-	@Query("select distinct b from Member m, Brotherhood b where b member of m.brotherhoods order by m")
+	@Query("select distinct b from Brotherhood b order by b.members.size")
 	Collection<Brotherhood> largestBrotherhoods();
 
-	@Query("select distinct b from Member m, Brotherhood b where b member of m.brotherhoods order by m desc")
+	@Query("select distinct b from Brotherhood b order by b.members.size desc")
 	Collection<Brotherhood> smallestBrotherhoods();
 
 }
