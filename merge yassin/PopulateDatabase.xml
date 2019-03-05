@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ * PopulateDatabase.xml
+ *
+ * Copyright (C) 2018 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	">
+	
+	<!-- User accounts -->
+	
+	<bean id="userAccount1" class="security.UserAccount">
+		<property name="username" value="admin1" />
+		<property name="password" value="e00cf25ad42683b3df678c61f42c6bda" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMIN" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount2" class="security.UserAccount">
+		<property name="username" value="admin2" />
+		<property name="password" value="c84258e9c39059a89ab77d846ddab909" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMIN" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccount3" class="security.UserAccount">
+		<property name="username" value="broderhood1" />
+		<property name="password" value="8f0f32240f31aa96a734369819efb284" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="BROTHERHOOD" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount4" class="security.UserAccount">
+		<property name="username" value="broderhood2" />
+		<property name="password" value="bccb2fea6548fde343ae9771bc94b123" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="BROTHERHOOD" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount5" class="security.UserAccount">
+		<property name="username" value="broderhood3" />
+		<property name="password" value="9d207249101834e76c98a66082b398d6" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="BROTHERHOOD" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount6" class="security.UserAccount">
+		<property name="username" value="member1" />
+		<property name="password" value="c7764cfed23c5ca3bb393308a0da2306" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="MEMBER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount7" class="security.UserAccount">
+		<property name="username" value="member2" />
+		<property name="password" value="88ed421f060aadcacbd63f28d889797f" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="MEMBER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount8" class="security.UserAccount">
+		<property name="username" value="member3" />
+		<property name="password" value="3ef4802d8a37022fd187fbd829d1c4d6" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="MEMBER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Other domain beans come here -->	
+	
+	<!-- BROTHERHOOD -->
+	
+	<bean id="brotherhood1" class="domain.Brotherhood">
+		<property name="name" value="Hermandad" />
+		<property name="middleName" value="" />
+		<property name="surname" value="La Hiniesta" />
+		<property name="photoURL" value="http://hermandades-de-sevilla.com/SemanaSanta/hermandades/LaHiniesta" />
+		<property name="email" value="hermandad@hermandad-hiniesta.org.com" />
+		<property name="phoneNumber" value="954419209" />
+		<property name="address" value="Plaza de San Julián 2 y 4, 41003, Sevilla"/>
+		
+		<property name="userAccount" ref="userAccount3" />
+		
+		<property name="title" value="Hdad. La Hiniesta" />
+		<property name="establishmentDate" value="06/05/2011" />
+		<property name="pictures" value="Real e Ilustre Hermandad Sacramental de la Inmaculada Concepción y Primitiva, 
+		Franciscana y Cisterciense Cofradía de Nazarenos de la Piedad de Nuestra Señora" />	
+	</bean>
+	
+	<bean id="brotherhood2" class="domain.Brotherhood">
+		<property name="name" value="Hermandad" />
+		<property name="middleName" value="" />
+		<property name="surname" value="La Paz" />
+		<property name="photoURL" value="http://hermandades-de-sevilla.com/SemanaSanta/hermandades/LaPaz" />
+		<property name="email" value="hermandad@hermandad-paz.org" />
+		<property name="phoneNumber" value="954232961" />
+		<property name="address" value="C/ San Salvador 1, 41013, Sevilla"/>
+		
+		<property name="userAccount" ref="userAccount4" />
+		
+		<property name="title" value="Hdad. La Paz" />
+		<property name="establishmentDate" value="12/05/2012" />
+		<property name="pictures" value="Real y Fervorosa Hermandad Sacramental del Señor San Sebastián, 
+		Nuestra Señora del Prado" />	
+	</bean>
+	
+	<bean id="brotherhood3" class="domain.Brotherhood">
+		<property name="name" value="Hermandad" />
+		<property name="middleName" value="" />
+		<property name="surname" value="La Estrella" />
+		<property name="photoURL" value="http://hermandades-de-sevilla.com/SemanaSanta/hermandades/LaEstrella" />
+		<property name="email" value="hermandad@hermandad-estrella.org" />
+		<property name="phoneNumber" value="954332186" />
+		<property name="address" value="C/ San Jacinto, 41, 41010, Sevilla "/>
+		
+		<property name="userAccount" ref="userAccount5" />
+		
+		<property name="title" value="Hdad. La Estrella" />
+		<property name="establishmentDate" value="23/05/2011" />
+		<property name="pictures" value="Pontificia, Real, Ilustre Fervorosa Hermandad Sacramental,
+		Cofradía de Nazarenos de Nuestro Padre Jesús de las Penas" />	
+	</bean>
+	
+	<!-- MEMBER -->
+	
+	<bean id="member1" class="domain.Member">
+		<property name="name" value="Juan" />
+		<property name="middleName" value="Francisco" />
+		<property name="surname" value="Del Río" />
+		<property name="photoURL" value=
+		"http://hermandades-de-sevilla.com/SemanaSanta/perfiles/JuanFranciscoDelRio" />
+		<property name="email" value="juanfrandelrio@gmail.com" />
+		<property name="phoneNumber" value="634965789" />
+		<property name="address" value="C/ Virgen del Amor, 2, 41002, Sevilla "/>
+		
+		<property name="userAccount" ref="userAccount6" />
+		
+		<property name="brotherhoods">
+			<list>
+				<ref bean="brotherhood1" />
+				<ref bean="brotherhood2" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="member2" class="domain.Member">
+		<property name="name" value="Felipe" />
+		<property name="middleName" value="Manuel" />
+		<property name="surname" value="Ordóñez" />
+		<property name="photoURL" value=
+		"http://hermandades-de-sevilla.com/SemanaSanta/perfiles/FelipeManuelOrdoñez" />
+		<property name="email" value="felipemanuelordo@gmail.com" />
+		<property name="phoneNumber" value="634835219" />
+		<property name="address" value="C/ Torreblanca, 1, 41003, Sevilla "/>
+		
+		<property name="userAccount" ref="userAccount7" />
+		
+		<property name="brotherhoods">
+			<list>
+				<ref bean="brotherhood3" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="member3" class="domain.Member">
+		<property name="name" value="Antonio" />
+		<property name="middleName" value="Gómez" />
+		<property name="surname" value="Ramírez" />
+		<property name="photoURL" value=
+		"http://hermandades-de-sevilla.com/SemanaSanta/perfiles/AntonioGomezRamirez" />
+		<property name="email" value="antongomram@gmail.com" />
+		<property name="phoneNumber" value="634620434" />
+		<property name="address" value="C/ Relator, 6, 41003, Sevilla "/>
+		
+		<property name="userAccount" ref="userAccount8" />
+		
+		<property name="brotherhoods">
+			<list>
+				<ref bean="brotherhood2" />
+				<ref bean="brotherhood3" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- POSITION -->
+	
+	<bean id="position1" class="domain.Position">
+		<property name="name" value="Presidente" />
+		<property name="language" value="es" />
+	</bean>
+	
+	<bean id="position2" class="domain.Position">
+		<property name="name" value="Vicepresidente" />
+		<property name="language" value="es" />
+	</bean>
+	
+	<bean id="position3" class="domain.Position">
+		<property name="name" value="Secretario" />
+		<property name="language" value="es" />
+	</bean>
+	
+	<bean id="position4" class="domain.Position">
+		<property name="name" value="Tesorero" />
+		<property name="language" value="es" />
+	</bean>
+	
+	<bean id="position5" class="domain.Position">
+		<property name="name" value="Historiador" />
+		<property name="language" value="es" />
+	</bean>
+	
+	<bean id="position6" class="domain.Position">
+		<property name="name" value="Promotor" />
+		<property name="language" value="es" />
+	</bean>
+	
+	<bean id="position7" class="domain.Position">
+		<property name="name" value="Vocal" />
+		<property name="language" value="es" />
+	</bean>
+	
+	<bean id="position8" class="domain.Position">
+		<property name="name" value="President" />
+		<property name="language" value="en" />
+	</bean>
+	
+	<bean id="position9" class="domain.Position">
+		<property name="name" value="Vicepresident" />
+		<property name="language" value="en" />
+	</bean>
+	
+	<bean id="position10" class="domain.Position">
+		<property name="name" value="Secretary" />
+		<property name="language" value="en" />
+	</bean>
+	
+	<bean id="position11" class="domain.Position">
+		<property name="name" value="Treasurer" />
+		<property name="language" value="en" />
+	</bean>
+	
+	<bean id="position12" class="domain.Position">
+		<property name="name" value="Historian" />
+		<property name="language" value="en" />
+	</bean>
+	
+	<bean id="position13" class="domain.Position">
+		<property name="name" value="Fundraiser" />
+		<property name="language" value="en" />
+	</bean>
+	
+	<bean id="position14" class="domain.Position">
+		<property name="name" value="Officer" />
+		<property name="language" value="en" />
+	</bean>
+	
+	<!-- ENROLMENT -->
+	
+	<bean id="enrolment1" class="domain.Enrolment">
+		<property name="moment" value="12/02/2016 14:23:41" />
+		<property name="dropOutMoment" value="21/02/2016 17:22:14" />		
+	
+		<property name="member" ref="member2" />
+		<property name="brotherhood" ref="brotherhood2" />
+		<property name="position" ref="position6" />	
+	</bean>
+	
+	<bean id="enrolment2" class="domain.Enrolment">
+		<property name="moment" value="05/03/2015 08:40:27" />
+		<property name="dropOutMoment" value="21/03/2016 14:11:21" />				
+	
+		<property name="member" ref="member1" />
+		<property name="brotherhood" ref="brotherhood3" />
+		<property name="position" ref="position4" />	
+	</bean>
+	
+	<bean id="enrolment3" class="domain.Enrolment">
+		<property name="moment" value="16/02/2017 09:31:54" />
+		<property name="dropOutMoment" value="23/02/2016 12:02:01" />				
+	
+		<property name="member" ref="member3" />
+		<property name="brotherhood" ref="brotherhood1" />
+		<property name="position" ref="position1" />	
+	</bean>
+	
+	<!-- FLOAT -->
+	
+	<bean id="float1" class="domain.Float">
+		<property name="title" value="Nuestro Padre Jesús de las Penas" />
+		<property name="description" value="Una perfecta conjunción entre 
+		la iconografía tradicional de la melancolía y 
+		la meditación sobre la muerte." />
+		<property name="pictures" value="Jesús de las Penas" />
+		
+		<property name="brotherhood" ref="brotherhood3" />	
+	</bean>
+	
+	<bean id="float2" class="domain.Float">
+		<property name="title" value="María Santísima de la Estrella" />
+		<property name="description" value="Destaca su belleza, contemplada tanto de frente como de perfil, 
+		y sus manos quizás sean las más “elocuentes” de todas las vírgenes sevillanas. " />
+		<property name="pictures" value="La Virgen de la Estrella,  María Magdalena" />
+		
+		<property name="brotherhood" ref="brotherhood3" />	
+	</bean>
+	
+	<bean id="float3" class="domain.Float">
+		<property name="title" value="Santísimo Cristo de la Buena Muerte" />
+		<property name="description" value="Muestra arrepentimiento 
+		y la conversión de los pecados de la carne." />
+		<property name="pictures" value="La Magdalena" />
+		
+		<property name="brotherhood" ref="brotherhood1" />	
+	</bean>
+	
+	<bean id="float4" class="domain.Float">
+		<property name="title" value="Nuestra señora de la Hiniesta" />
+		<property name="description" value="Santa María de la Hiniesta figura con todo derecho y merecimiento 
+		entre las advocaciones claves del Marianismo Hispalense." />
+		<property name="pictures" value="Corona del niño Jesús, ráfaga, media luna" />
+		
+		<property name="brotherhood" ref="brotherhood1" />	
+	</bean>
+	
+	<bean id="float5" class="domain.Float">
+		<property name="title" value="Nuestro Padre Jesús de la Victoria" />
+		<property name="description" value="Nuestro Padre Jesús de la Victoria de Sevilla es una escultura procesional, 
+		titular de la Hermandad de La Paz de esta ciudad." />
+		<property name="pictures" value="Padre Jesús de la Victoria" />
+		
+		<property name="brotherhood" ref="brotherhood2" />	
+	</bean>
+	
+	<bean id="float6" class="domain.Float">
+		<property name="title" value="María Santísima de La Paz" />
+		<property name="description" value="Se trata de una imagen de Dolorosa para vestir, 
+		que representa a una mujer bella y madura cuyo rostro está dotado de una acertada expresión triste y serena a la vez.." />
+		<property name="pictures" value="María Santísima de La Paz" />
+		
+		<property name="brotherhood" ref="brotherhood2" />	
+	</bean>
+	
+	<!-- PROCESSION -->
+	
+	<bean id="procession1" class="domain.Procession">
+		<property name="title" value="Procesión Hiniesta Gloriosa" />
+		<property name="description" value="La Santísima Virgen de la Hiniesta Gloriosa Coronada, 
+		lucirá un manto nuevo donado por el Grupo de Mujeres del Ropero 
+		de la Santísima Virgen de la Hiniesta y algunos devotos." />
+		<property name="moment" value="19/05/2019" />
+		<property name="ticker" value="190512-BMNSAL" />
+		<property name="finalMode" value="false" />
+		
+		<property name="brotherhood" ref="brotherhood1" />	
+		<property name="floats">
+			<list>
+				<ref bean="float3" />
+				<ref bean="float4" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="procession2" class="domain.Procession">
+		<property name="title" value="Procesión de La Estrella" />
+		<property name="description" value="Se trata de la salida procesional
+		 más importante que hace esta imagen, en una procesión de gloria, 
+		 ya que no realiza estación de penitencia en la Semana Santa ayamontina." />
+		<property name="moment" value="16/05/2019" />
+		<property name="ticker" value="190516-AVYGTK" />
+		<property name="finalMode" value="false" />
+		
+		<property name="brotherhood" ref="brotherhood3" />	
+		<property name="floats">
+			<list>
+				<ref bean="float1" />
+				<ref bean="float2" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="procession3" class="domain.Procession">
+		<property name="title" value="Procesión de La Paz" />
+		<property name="description" value="La procesión rinde culto a la 
+		Virgen del Prado, del siglo XVI." />
+		<property name="moment" value="18/05/2019" />
+		<property name="ticker" value="190518-EUHLFG" />
+		<property name="finalMode" value="false" />
+		
+		<property name="brotherhood" ref="brotherhood2" />	
+		<property name="floats">
+			<list>
+				<ref bean="float5" />
+				<ref bean="float6" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- MARCHREQUEST -->
+	<bean id="marchrequest1" class="domain.MarchRequest">
+		<property name="status" value="PENDING" />
+		<property name="row" value="" />
+		<property name="columnn" value="" />
+		<property name="rejectedCause" value="" />		
+		<property name="member" ref="member2" />
+		<property name="procession" ref="procession1" />	
+	</bean>
+	
+	<bean id="marchrequest2" class="domain.MarchRequest">
+		<property name="status" value="APPROVED" />
+		<property name="row" value="2" />
+		<property name="columnn" value="3" />
+		<property name="rejectedCause" value="" />		
+		<property name="member" ref="member1" />
+		<property name="procession" ref="procession3" />	
+	</bean>
+
+	</beans>
