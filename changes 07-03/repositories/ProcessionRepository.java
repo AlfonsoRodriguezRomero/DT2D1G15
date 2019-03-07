@@ -16,7 +16,7 @@ public interface ProcessionRepository extends JpaRepository<Procession, Integer>
 	Collection<Procession> findByBrotherhoodId(int id);
 
 	//Show to other actors only processions in final mode
-	@Query("select p from Procession p where p.finalMode='true'")
+	@Query("select p from Procession p where p.finalMode=true and p.brotherhood.id=?1")
 	Collection<Procession> findAllInFinalMode(int id);
 
 	@Query("select p from Procession p, Brotherhood b, Member m where m member of b.members and b is p.brotherhood and m.id=?1")
