@@ -19,7 +19,7 @@ public interface ProcessionRepository extends JpaRepository<Procession, Integer>
 	@Query("select p from Procession p where p.finalMode=true and p.brotherhood.id=?1")
 	Collection<Procession> findAllInFinalMode(int id);
 
-	@Query("select p from Procession p, Brotherhood b, Member m where m member of b.members and b is p.brotherhood and m.id=?1")
+	@Query("select p from Procession p, Brotherhood b, Member m where m member of b.members and b is p.brotherhood and m.id=?1 and p.finalMode=true")
 	Collection<Procession> findByMemberId(int id);
 
 	//12.3
